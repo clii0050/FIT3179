@@ -1,4 +1,4 @@
-Country,Region,Happiness Rank,Happiness Score,Standard Error,Economy (GDP per Capita),Family,Health (Life Expectancy),Freedom,Trust (Government Corruption),Generosity,Dystopia Residual
+Country,Region,Happiness_Rank,Happiness_Score,Standard_Error,GDP_per_Capita,Family,Health,Freedom,Trust_Government_Corruption,Generosity,Dystopia_Residual
 Israel,Africa,11,7.278,0.0347,1.22857,1.22393,0.91387,0.41319,0.07785,0.33172,3.08854
 United Arab Emirates,Africa,20,6.901,0.03729,1.42727,1.12575,0.80925,0.64157,0.38583,0.26428,2.24743
 Oman,Africa,22,6.853,0.05335,1.36011,1.08182,0.76276,0.63274,0.32524,0.21542,2.47489
