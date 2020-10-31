@@ -18,13 +18,13 @@
         "fields": ["Happiness_Score"]
       }
     },
-    {"calculate": "datum.Happiness_Score + 10", "as": "Happiness Score"}
+    {"calculate": "datum.Happiness_Score", "as": "Happiness Score"}
   ],
   "projection": {"type": "equirectangular"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Happiness Score",
+      "field": "Happiness_Score",
       "type": "quantitative",
       "scale": {"type": "log"}
     },
