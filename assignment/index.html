@@ -19,13 +19,13 @@
 
 <script type="text/javascript">
   
-  var map = "https://clii0050.github.io/FIT3179/Homework1.json";
+  var map = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/map_vis.json";
   
   vegaEmbed('#choropleth_map', map).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var sca_plot = "https://raw.githubusercontent.com/clii0050/FIT3179/main/HappyScatter.json";
+  var sca_plot = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/scatter_GDP.json";
   
   vegaEmbed('#scatter_plot', sca_plot).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
