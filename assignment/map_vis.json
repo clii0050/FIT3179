@@ -26,7 +26,8 @@
     "color": {
       "field": "Happiness_Score",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {"scheme": "redyellowgreen"}
+
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
