@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "Happiness Score VS GDP",
+  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/clii0050/FIT3179/main/happy_2015.csv"
+  },
+  "params": [
+    {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australia and New Zealand",
+          "Central and Eastern Europe",
+          "Eastern Asia",
+          "Latin America and Caribbean",
+          "Middle East and Northern Africa",
+          "North America",
+          "Southeastern Asia",
+          "Southern Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "labels": [
+          "Show All",
+          "Australia and New Zealand",
+          "Central and Eastern Europe",
+          "Eastern Asia",
+          "Latin America and Caribbean",
+          "Middle East and Northern Africa",
+          "North America",
+          "Southeastern Asia",
+          "Southern Asia",
+          "Sub-Saharan Africa",
+          "Western Europe"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Region_selection == null || datum.Region == Region_selection"}
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Economy (GDP per Capita)",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "y": {
+      "field": "HappinessScore",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "color": {"field": "Region", "type": "nominal"},
+    "shape": {"field": "Region", "type": "nominal"}
+  },
+  "config": {}
+}
