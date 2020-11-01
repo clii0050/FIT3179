@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300,
+  "height": 150,
+  "title": "Happiness Score (High, Low, Median) in Each Region",
+  "description": "A vertical box plot showing median and lower and upper quartiles of the distribution of happiness score in different region.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/Happniess_data2015.csv"
+  },
+  "mark": "boxplot",
+  "transform": [{"filter": "datum.Region != 'Oceania'"}],
+  "encoding": {
+    "x": {
+      "field": "Happiness_Score",
+      "type": "quantitative",
+      "scale": {"zero": false}
+    },
+    "color": {"field": "SpeciRegiones", "type": "nominal", "legend": null},
+    "y": {"field": "Region", "type": "nominal"}
+  },
+  "config": {}
+}

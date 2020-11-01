@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A bar chart showing the US population distribution of age groups in 2000.",
+  "height": {"step": 10},
+  "width": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/Happniess_data2015.csv"
+  },
+  "params": [
+    {
+      "name": "Happiness_Score",
+      "value": 6.5,
+      "bind": {
+        "input": "",
+        "min": 0,
+        "max": 10,
+        "step": 0.1,
+        "name": "Minimum Happiness Score: "
+      }
+    },
+    {
+      "name": "Region",
+      "bind": {
+        "input": "select",
+        "options": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "labels": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "name": "Region: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Happiness_Score >= Happiness_Score"},
+    {"filter": "datum.Region == Region"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "Country", "type": "ordinal", "sort": "-x"},
+    "x": {
+      "field": "Happiness_Score",
+      "type": "quantitative",
+      "title": "Happiness Score",
+      "scale": {"type": "linear"}
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Region", "type": "nominal"},
+      {"field": "Happiness_Score", "type": "quantitative"},
+      {"field": "GDP_per_Capita", "type": "quantitative"}
+    ]
+  },
+  "config": {}
+}
