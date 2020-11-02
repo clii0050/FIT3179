@@ -15,7 +15,6 @@
       "type": "quantitative",
       "scale": {"zero": false}
     },
-    "color": {"field": "SpeciRegiones", "type": "nominal", "legend": null},
     "y": {"field": "Region", "type": "nominal"}
   },
   "config": {}
