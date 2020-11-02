@@ -1,36 +1,178 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	CSS
+	Azure by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+
+Website & data vis created by Cheuk Hei Li
+-->
 <html>
-<head>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-  <!-- Import vega-embed -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
-  
-<body>
-<h1>FIT3179 Visualisations 2</h1>
+	<head>
+		<title>Happiness Score Visualisation </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		 <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+		<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+		<!-- Import vega-embed -->
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+	</head>
+	<body>
+		<div id="header-wrapper">
+			<div class="container">
+				<div id="header">
+					<div id="logo">
+						<h1><a>Happiness</a></h1>
+						<p>Visualisation of Happiness Score world data</p>
+			</div>
+		</div>
+		<div id="wrapper">
+			<div class="container" id="page-wrapper">
+				<div class="row">
+					<div class="3u">
+						<section id="pbox1">
+							<h2>Region Score</h2>
+							<br><br>
+							<ul class="style4">
+								<li class="first">
+									<p class="date">Afica</p>
+									<p>The Average score in Afica is relatively low, median is 4.5 The country who's Lowest is Togo, score: 2.8,
+									and the highest is Israel, score: 7.2</p>
+								</li>
+								<li>
+									<p class="date">Asia</p>
+									<p>Asian countries' median score is 5.1, higher than Afica. </p>
+									<p>Lowest: Afghanistan, 3.8</p>
+									<p>Highest: Singapore, 6.8</p>
+								</li>
+								<li>
+									<p class="date">Europe</p>
+									<p>Europe countries' median score is 5.8</p>
+									<p>Lowest: Bulgaria, 4.2</p>
+									<p>Highest: Switzerland, 7.6</p>
+								</li>
+								<li>
+									<p class="date">North America</p>
+									<p>America countris</p>
+									<p>Lowest: Haiti, 4.5</p>
+									<p>Lowest: Canada, 7.4</p>
+								</li>
+								<li>
+									<p class="date">South America</p>
+									<p>America countris</p>
+									<p>Lowest: Peru, 5.8</p>
+									<p>Lowest: Brazil, 7.0</p>
+								</li>
+								<li>
+									<p class="date">Oceania</p>
+									<p>In this data set, only 2 countries which are 
+									Australia and New Zealand. Their scores are relatively high.</p>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="6u">
+						<section id="pbox2">
+							<h2>　　　　WORLD MAP (HP score)</h2>
+							<br><br>
+							<div id="choropleth_map"></div>
+							<p>This is a World map showing the happiness score of each country in the world. 
+							However, because of some countries or regions that the dataset didn't have, 
+							the map will display Grey to represent that there is no data for that country.</p>
+							<br><br>
+							<p> There are 6 regions, or continents, which are Africa, Asia, Europe, North America, South America and Oceania. The color of a country represents the happiness score. 
+							The higher the score the country is, the color will be close to green. 
+							while lower scores will display as red.</p>
+							
+							<br><br><div id="box_plot"></div>
+							<br><br>
+							<p> This is a box plot showing the Median, max, min etc... However, Oceania didn't show on the plot, 
+							because there are only 2 countries belonging to Oceania is the data set, so it will not display.  </p>
+							<br>
+							<p><a href="https://www.kaggle.com/unsdsn/world-happiness" class="button-style1">Link to Dataset</a></p>
+						</section>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container" id="footer">
+				<div class="row">
+					<div class="8u">
+						<section id="fbox1">
+							<h2>GDP VS Happniess Score</h2><br>
+							<p>Relationship between GDP & Happniess Score</p>
+							<p>(click legend to highlight)</p>
+							<br><br>
+							<div id="scatter_plot"></div>
+						</section>
+					</div>
+					<div class="4u">
+						<section id="fbox2">
+							<h2>Higher GDP, higher score?</h2> <br><br>
+							<p>Overall, Yes. As the graph shown, the higher Gross domestic product of a country,
+							the country would likely has higher happiness score .</p>
+							<br><br>
+							<p>If you scroll the min GDP bar to 1.1, you will soon find out that
+							90% of those countries have happiness score with more than 5.</p>
+							<br><br>
+							<p>As a result, people who live in countries that have higher Gross domestic product will be happier, 
+							because those countries will likely have higher happiness scores.</p>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			<div class="container" id="footer">
+				<div class="row">
+					<div class="8u">
+						<section id="fbox1">
+							<h2>Author: Cheuk Hei Li </h2>
+							<p><a href="https://github.com/clii0050/FIT3179/tree/main/assignment" class="button-style1">Link to Github</a></p>
+						</section>
+						
 
-<h2>Happiness score MAP</h2>
-<div id="choropleth_map"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<h2>Happiness score VS GDP scatter plot</h2>
-<div id="scatter_plot"></div>
-
-<script type="text/javascript">
+		<div class="container" id="copyright">
+			CSS: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+			Author: Cheuk Hei Li
+		</div>
+	<script type="text/javascript">
   
-  var map = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/map_vis.json";
+		var map = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/map_vis.json";
   
-  vegaEmbed('#choropleth_map', map).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+		vegaEmbed('#choropleth_map', map).then(function(result) {
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+		}).catch(console.error);
   
-  var sca_plot = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/scatter_GDP.json";
+		var sca_plot = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/scatter_GDP.json";
   
-  vegaEmbed('#scatter_plot', sca_plot).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+		vegaEmbed('#scatter_plot', sca_plot).then(function(result) {
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+		}).catch(console.error);
+		
+		var box = "https://raw.githubusercontent.com/clii0050/FIT3179/main/assignment/box_plot.json";
+  
+		vegaEmbed('#box_plot', box).then(function(result) {
+		// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+		}).catch(console.error);
 </script>
-
-</body>
+	</body>
 </html>
