@@ -1,2 +1,5 @@
-# FIT3179
-FIT3179 Data Vis 2
+Monash University
+FIT3179 Data Visualisation Project 2
+
+Link to the webpage
+https://clii0050.github.io/FIT3179/
